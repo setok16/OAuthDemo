@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
     'code': code,
     'client_id': '38377454915-j0952k9ejl2trrffs7d56ksqrm3jv4la.apps.googleusercontent.com',
     'client_secret': 'Bk4up1MP5qGB-ORryRzgON1l',
-    //'redirect_uri': 'https://oauth-demo-194701.appspot.com/oauth',
-    'redirect_uri': 'http://localhost:3000/oauth',
+    'redirect_uri': 'https://oauth-demo-194701.appspot.com/oauth',
+    //'redirect_uri': 'http://localhost:3000/oauth',
     'grant_type': 'authorization_code'
   };
 
