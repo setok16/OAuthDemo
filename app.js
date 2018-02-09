@@ -4,8 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var dotenv = require('dotenv').config();
-//var session = require('express-session');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 
 var index = require('./routes/index');
 var oauth = require('./routes/oauth');
@@ -24,6 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(session({secret:'fh24783rq2o34rgdfa',resave:false,saveUninitialized:true}));
+app.use(session({
+  secret: 'fdf8934nfsd794rbsdfjhkdf',
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({ url:'mongodb://kseto319:P%40llet_t0wn@ds117758.mlab.com:17758/sandbox' })
+}));
 
 app.use('/public', express.static(__dirname + '/public'));
 

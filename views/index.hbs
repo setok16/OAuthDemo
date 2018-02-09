@@ -6,7 +6,8 @@
 <script>
 function submit() {
   var state = '{{state}}';
-  var redirectUri = 'https://oauth-demo-194701.appspot.com/oauth'; 
+  //var redirectUri = 'https://oauth-demo-194701.appspot.com/oauth'; 
+  var redirectUri = 'http://localhost:3000/oauth'; 
   var getUri = 'https://accounts.google.com/o/oauth2/v2/auth?response_type=code&state='+state+
     '&scope=email&redirect_uri='+redirectUri+
     '&client_id=38377454915-j0952k9ejl2trrffs7d56ksqrm3jv4la.apps.googleusercontent.com&access_type=offline';
