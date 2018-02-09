@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<p>{{description}}</p>
+
+<button style="background:url(/public/images/XzoRm.png); width:602px; height:102px" id="submit" onclick="submit()">
+
+<script>
+function submit() {
+  var state = '{{state}}';
+  var redirectUri = 'https://oauth-demo-194701.appspot.com/oauth'; 
+  var getUri = 'https://accounts.google.com/o/oauth2/v2/auth?response_type=code&state='+state+
+    '&scope=email&redirect_uri='+redirectUri+
+    '&client_id=38377454915-j0952k9ejl2trrffs7d56ksqrm3jv4la.apps.googleusercontent.com&access_type=offline';
+  window.location = getUri;
+}
+
+// Source: https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+// Used for generating state
+function makeid() {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (var i = 0; i < 32; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+</script>
